@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NITRATE SENSOR</string>
+    <string name="activity_name">NITRATE SENSOR</string>
+    <string name="action_connect">Choose Device</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="string_back">Return</string>
+	<string name="string_refresh">Refresh</string>
+	<string name="ble_search_name">Ble Devices</string>
+
+
+    <string name="impedance">Nitrate Concentration(mg/L)</string>
+    <string name="temperature">Temperature(°C) </string>
+    <string name="clear_all">Clear All</string>
+    <string name="clear_current">Clear Current</string>
+    <string name="send">Send</string>
+
+    <string name="time_interval">Time Interval</string>
+
+    <string name="autosend_time">Auto Time</string>
+
+    <string name="autosend">Autosend</string>
+
+    <string name="test_condition">Test Condition</string>
+
+    <string name="save">Save</string>
+
+    <string name="expected_y">Y-Hat: </string>
+
+
+
+
+
+
+</resources>

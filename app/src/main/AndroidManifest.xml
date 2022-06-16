@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bluetooth_transmission"
+    android:versionCode="2"
+    android:versionName="2.0" >
+
+<!--    <uses-permission android:name="android.permission.BLUETOOTH"/>-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
+<!--    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"   android:maxSdkVersion="30" />-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>-->
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- Needed only if your app looks for Bluetooth devices.
+             If your app doesn't use Bluetooth scan results to derive physical
+             location information, you can strongly assert that your app
+             doesn't derive physical location. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!-- Needed only if your app makes the device discoverable to Bluetooth
+      devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <!-- Needed only if your app communicates with already-paired Bluetooth
+           devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!--bibo01 : hardware option-->
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"   android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:maxSdkVersion="30" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-sdk
+        android:targetSdkVersion="30" />
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.bluetooth_transmission.UnvarnishedTransmissionActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.bluetooth_transmission.DeviceSearchActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/ble_search_name" >
+        </activity>
+
+        <activity
+            android:name="com.example.bluetooth_transmission.PlotActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/ble_search_name" >
+        </activity>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bluetooth_transmission.PlotActivity">
+
+    <com.jjoe64.graphview.GraphView
+    android:id="@+id/graphimpedance"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true" />
+
+    <com.jjoe64.graphview.GraphView
+    android:id="@+id/graphtemp"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="128dp"/>
+
+    <!--<com.androidplot.xy.XYPlot-->
+        <!--android:id="@+id/graphimpedance"-->
+        <!--androidPlot.domainLabel="Sample"-->
+        <!--androidPlot.domainLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size"-->
+        <!--androidPlot.graphWidget.domainLabelPaint.textSize="@dimen/domain_tick_label_font_size"-->
+        <!--androidPlot.graphWidget.domainOriginLabelPaint.textSize="@dimen/domain_tick_label_font_size"-->
+        <!--androidPlot.graphWidget.marginBottom="25dp"-->
+        <!--androidPlot.graphWidget.marginLeft="22dp"-->
+        <!--androidPlot.graphWidget.marginRight="20dp"-->
+        <!--androidPlot.graphWidget.marginTop="20dp"-->
+        <!--androidPlot.graphWidget.rangeLabelPaint.textSize="@dimen/range_tick_label_font_size"-->
+        <!--androidPlot.graphWidget.rangeOriginLabelPaint.textSize="@dimen/range_tick_label_font_size"-->
+        <!--androidPlot.rangeLabel="Temperature [f]"-->
+        <!--androidPlot.rangeLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size"-->
+        <!--androidPlot.title="Received Data"-->
+        <!--androidPlot.titleWidget.labelPaint.textSize="@dimen/title_font_size"-->
+        <!--androidplot.renderMode="use_background_thread"-->
+        <!--title="A/P/R History"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="128dp"-->
+        <!--android:layout_weight="8.50" />-->
+
+    <!--<com.androidplot.xy.XYPlot-->
+        <!--android:id="@+id/graphtemp"-->
+        <!--android:layout_marginTop="128dp"-->
+        <!--androidPlot.domainLabel="Sample"-->
+        <!--androidPlot.domainLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size"-->
+        <!--androidPlot.graphWidget.domainLabelPaint.textSize="@dimen/domain_tick_label_font_size"-->
+        <!--androidPlot.graphWidget.domainOriginLabelPaint.textSize="@dimen/domain_tick_label_font_size"-->
+        <!--androidPlot.graphWidget.marginBottom="25dp"-->
+        <!--androidPlot.graphWidget.marginLeft="22dp"-->
+        <!--androidPlot.graphWidget.marginRight="20dp"-->
+        <!--androidPlot.graphWidget.marginTop="20dp"-->
+        <!--androidPlot.graphWidget.rangeLabelPaint.textSize="@dimen/range_tick_label_font_size"-->
+        <!--androidPlot.graphWidget.rangeOriginLabelPaint.textSize="@dimen/range_tick_label_font_size"-->
+        <!--androidPlot.rangeLabel="Temperature [f]"-->
+        <!--androidPlot.rangeLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size"-->
+        <!--androidPlot.title="Received Data"-->
+        <!--androidPlot.titleWidget.labelPaint.textSize="@dimen/title_font_size"-->
+        <!--androidplot.renderMode="use_background_thread"-->
+        <!--title="A/P/R History"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="128dp"-->
+        <!--android:layout_weight="8.50" />-->
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/graphtemp"
+        android:layout_marginTop="20dp"
+        android:text="@string/send" />
+
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btn_scan"
+        android:layout_marginTop="20dp"
+        android:text="@string/save" />
+
+    <RelativeLayout
+        android:id="@+id/send_command"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_scan"
+        android:layout_marginTop="80dp">
+
+        <LinearLayout
+            android:id="@+id/send_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/time_interval"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/time"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint=">100(ms)"
+                android:inputType="number"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/autosend_time"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="5"
+                android:inputType="number"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_send_ist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:enabled="false"
+                android:text="@string/autosend"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/send_ly"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/other_txt"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center_vertical"
+                android:text="@string/test_condition"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/other_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/Slope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_scan"
+        android:layout_alignBottom="@+id/btn_scan"
+        android:layout_alignParentStart="true"
+        android:text="Slope: "
+        tools:text="Slope: " />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_save"
+        android:layout_alignBottom="@+id/btn_save"
+        android:layout_alignStart="@+id/Slope"
+        android:text="Intercept:"
+        tools:text="Intercept:" />
+
+    <EditText
+        android:id="@+id/slope_value"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn_save"
+        android:layout_marginStart="23dp"
+        android:layout_toEndOf="@+id/textView16"
+        android:hint="0.00"
+        android:inputType="numberSigned|numberDecimal" />
+
+    <EditText
+        android:id="@+id/slope_value2"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/send_command"
+        android:layout_alignStart="@+id/slope_value"
+        android:hint="0.00"
+        android:inputType="numberSigned|numberDecimal" />
+
+
+</RelativeLayout>
